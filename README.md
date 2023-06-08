@@ -240,13 +240,13 @@ Distributed under the GNU-3.0 License. See [LICENSE](https://github.com/John-Jon
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=720303
+[contributors-shield]: https://img.shields.io/github/contributors/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=222bac
 [contributors-url]: https://github.com/John-JonSteyn/Pneumonologos/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=a81313
+[forks-shield]: https://img.shields.io/github/forks/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=2240ac
 [forks-url]: https://github.com/John-JonSteyn/Pneumonologos/network/members
-[stars-shield]: https://img.shields.io/github/stars/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=720303
+[stars-shield]: https://img.shields.io/github/stars/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=224bac
 [stars-url]: https://github.com/John-JonSteyn/Pneumonologos/stargazers
-[issues-shield]: https://img.shields.io/github/issues/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=a81313
+[issues-shield]: https://img.shields.io/github/issues/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=225bac
 [issues-url]: https://github.com/John-JonSteyn/Pneumonologos/issues
-[license-shield]: https://img.shields.io/github/license/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=720303
+[license-shield]: https://img.shields.io/github/license/John-JonSteyn/Pneumonologos.svg?style=for-the-badge&color=2267ac
 [license-url]: https://github.com/John-JonSteyn/Pneumonologos/blob/master/LICENSE
