@@ -167,17 +167,17 @@ Simply follow these steps, as you would the doctors instructions.
 ### Stage 1: Data Preparation and Preprocessing
 - [x] Download the Chest X-Ray Images (Pneumonia) dataset from the provided link.
 - [x] Split the dataset into training, validation, and testing sets.
-- [ ] Perform exploratory data analysis to understand the distribution and characteristics of the data.
-- [ ] Preprocess the images, including resizing them to a consistent size, converting them to grayscale (if needed), and normalizing pixel values.
-- [ ] Create data loaders to efficiently load and augment the data during training.
+- [x] Perform exploratory data analysis to understand the distribution and characteristics of the data.
+- [x] Preprocess the images, including resizing them to a consistent size, converting them to grayscale (if needed), and normalizing pixel values.
+- [x] Create data loaders to efficiently load and augment the data during training.
 
 ### Stage 2: Model Development
-- [ ] Choose a suitable pre-trained deep learning model for image classification, such as ResNet, DenseNet, or VGGNet.
-- [ ] Modify the model's output layer to have two classes: Pneumonia and Normal.
-- [ ] Initialize the model and load the pre-trained weights.
-- [ ] Define an appropriate loss function, such as cross-entropy loss, and choose an optimizer, such as Adam or SGD.
-- [ ] Train the model using the training dataset, monitoring the performance on the validation set.
-- [ ] Perform hyperparameter tuning, adjusting learning rate, batch size, and regularization techniques (e.g., dropout) to improve model performance.
+- [x] Choose a suitable pre-trained deep learning model for image classification, such as ResNet, DenseNet, or VGGNet.
+- [x] Modify the model's output layer to have two classes: Pneumonia and Normal.
+- [x] Initialize the model and load the pre-trained weights.
+- [x] Define an appropriate loss function, such as cross-entropy loss, and choose an optimizer, such as Adam or SGD.
+- [x] Train the model using the training dataset, monitoring the performance on the validation set.
+- [x] Perform hyperparameter tuning, adjusting learning rate, batch size, and regularization techniques (e.g., dropout) to improve model performance.
 
 ### Stage 3: Model Evaluation and Optimization
 - [ ] Evaluate the trained model on the testing dataset to measure its performance.
