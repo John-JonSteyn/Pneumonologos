@@ -165,8 +165,8 @@ Simply follow these steps, as you would the doctors instructions.
 ## Pneumonologos Project Roadmap
 
 ### Stage 1: Data Preparation and Preprocessing
-- [ ] Download the Chest X-Ray Images (Pneumonia) dataset from the provided link.
-- [ ] Split the dataset into training, validation, and testing sets.
+- [x] Download the Chest X-Ray Images (Pneumonia) dataset from the provided link.
+- [x] Split the dataset into training, validation, and testing sets.
 - [ ] Perform exploratory data analysis to understand the distribution and characteristics of the data.
 - [ ] Preprocess the images, including resizing them to a consistent size, converting them to grayscale (if needed), and normalizing pixel values.
 - [ ] Create data loaders to efficiently load and augment the data during training.
