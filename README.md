@@ -194,6 +194,7 @@ Simply follow these steps, as you would the doctors instructions.
 
 ### Stage 5: Deployment and Testing
 - [ ] Prepare application for deployment, ensuring that all necessary dependencies and packages are included.
+- [ ] Review and complete README.md
 
 See the [open issues](https://github.com/John-JonSteyn/Pneumonologos/issues) for a full list of proposed features (and known issues).
 
