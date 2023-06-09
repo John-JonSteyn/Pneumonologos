@@ -21,7 +21,8 @@ if not val_path.exists():
 dls = ImageDataLoaders.from_folder(path, train='Train', valid='Val',
                                    test='Test',
                                    item_tfms=Resize(460),
-                                   batch_tfms=aug_transforms())
+                                   batch_tfms=aug_transforms(),
+                                   num_workers=0)
 
 # Verify data loaders
 if dls.train_ds is None:
@@ -32,10 +33,10 @@ if dls.valid_ds is None:
     sys.exit(1)
 
 # Create learner
-learn = cnn_learner(dls, resnet34, metrics=[accuracy, RocAucBinary()])
+learn = vision_learner(dls, resnet34, metrics=[accuracy, RocAucBinary()])
 
 # Train the model
 learn.fine_tune(4)
 
 # Save the trained model
-learn.export('Pneumonologos/Models/pneumonia_classifier.pkl')
+learn.export('Pneumonologos/Models/pneumonia_classifier_v01.pkl')
