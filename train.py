@@ -39,4 +39,4 @@ learn = vision_learner(dls, resnet34, metrics=[accuracy, RocAucBinary()])
 learn.fine_tune(4)
 
 # Save the trained model
-learn.export('pneumonia_classifier_v01.pkl')
+learn.export('Models/pneumonia_classifier_v02.pkl')
