@@ -38,5 +38,9 @@ learn = vision_learner(dls, resnet34, metrics=[accuracy, RocAucBinary()])
 # Train the model
 learn.fine_tune(4)
 
+# Ensure Models Folder Exists
+model_path = path/'Models'
+model_path.mkdir(exist_ok=True, parents=True)
+
 # Save the trained model
-learn.export('Models/pneumonia_classifier_v02.pkl')
+learn.export(model_path/'pneumonia_classifier_v02.pkl')
