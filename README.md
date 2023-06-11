@@ -164,37 +164,34 @@ Simply follow these steps, as you would the doctors instructions.
 <!-- ROADMAP -->
 ## Pneumonologos Project Roadmap
 
-### Stage 1: Data Preparation and Preprocessing
-- [x] Download the Chest X-Ray Images (Pneumonia) dataset from the provided link.
-- [x] Split the dataset into training, validation, and testing sets.
-- [x] Perform exploratory data analysis to understand the distribution and characteristics of the data.
-- [x] Preprocess the images, including resizing them to a consistent size, converting them to grayscale (if needed), and normalizing pixel values.
+### Stage 1: Data Collection and Preparation
+- [x] Download the Chest X-Ray Images (Pneumonia) dataset.
+- [x] Preprocess the images, such as resizing and augmenting, if required.
 - [x] Create data loaders to efficiently load and augment the data during training.
 
 ### Stage 2: Model Development
-- [x] Choose a suitable pre-trained deep learning model for image classification, such as ResNet, DenseNet, or VGGNet.
-- [x] Modify the model's output layer to have two classes: Pneumonia and Normal.
-- [x] Initialize the model and load the pre-trained weights.
-- [x] Define an appropriate loss function, such as cross-entropy loss, and choose an optimizer, such as Adam or SGD.
-- [x] Train the model using the training dataset, monitoring the performance on the validation set.
-- [x] Perform hyperparameter tuning, adjusting learning rate, batch size, and regularization techniques (e.g., dropout) to improve model performance.
+- [x] Write a training script, for example, train.py, using the Fastai library, to train a model on the prepared dataset.
+- [x] Save the trained model for future use.
 
-### Stage 3: Model Evaluation and Optimization
-- [ ] Evaluate the trained model on the testing dataset to measure its performance.
-- [ ] Calculate metrics such as accuracy, precision, recall, and F1 score to assess the model's effectiveness in pneumonia detection.
-- [ ] Generate a confusion matrix to analyze the classification results in more detail.
-- [ ] Fine-tune the model if necessary, based on the evaluation results, to improve its performance.
-
-### Stage 4: GUI Development
+### Stage 3: GUI Development
 - [ ] Install PyQt to create the graphical user interface (GUI) for the application.
 - [ ] Design the GUI layout, including necessary elements like buttons, file upload functionality, and display areas for the results.
 - [ ] Implement the necessary logic to load the trained model and perform predictions on uploaded X-ray images.
 - [ ] Integrate the prediction results and display them in the GUI, including the classification (Pneumonia or Normal) and associated probabilities.
 - [ ] Test the GUI functionality thoroughly and make any necessary refinements.
 
-### Stage 5: Deployment and Testing
-- [ ] Prepare application for deployment, ensuring that all necessary dependencies and packages are included.
-- [ ] Review and complete README.md
+### Stage 4: Integration
+- [ ] Integrate the trained model and the GUI by incorporating the model's prediction functionality into the GUI's code.
+- [ ] Handle the image submission from the GUI and pass it to the trained model for classification.
+- [ ] Display the classification result and the probability of pneumonia on the GUI interface.
+
+### Stage 5: Testing and Refinement
+- [ ] Test the GUI by running it and submitting various X-ray images to ensure proper functionality.
+- [ ] Fine-tune the model and update the trained model if needed to improve performance.
+
+### Stage 6: Deplayment
+- [ ] Update requirements.
+- [ ] Update Readme.
 
 See the [open issues](https://github.com/John-JonSteyn/Pneumonologos/issues) for a full list of proposed features (and known issues).
 
