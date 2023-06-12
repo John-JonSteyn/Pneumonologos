@@ -174,7 +174,7 @@ Simply follow these steps, as you would the doctors instructions.
 - [x] Save the trained model for future use.
 
 ### Stage 3: GUI Development
-- [x] Install PyQt to create the graphical user interface (GUI) for the application.
+- [ ] Install PyQt to create the graphical user interface (GUI) for the application.
 - [ ] Design the GUI layout, including necessary elements like buttons, file upload functionality, and display areas for the results.
 - [ ] Implement the necessary logic to load the trained model and perform predictions on uploaded X-ray images.
 - [ ] Integrate the prediction results and display them in the GUI, including the classification (Pneumonia or Normal) and associated probabilities.
