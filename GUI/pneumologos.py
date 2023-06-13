@@ -3,7 +3,7 @@ import sys
 import logging
 from PyQt6.QtCore import Qt, QFile
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QColor
 from PIL import Image
 from fastai.vision.all import *
 from pneumologos_ui import Ui_MainWindow
@@ -82,7 +82,13 @@ class PneumologosApp(QMainWindow):
             pred, probability = self.image_processor.process_image(self.image_path)
 
             if pred is not None and probability is not None:
-                self.ui.labelDiagnosis.setText(f"Diagnosis: {pred}")
+                if pred == "Pneumonia":
+                    self.ui.labelDiagnosis.setText("Diagnosis: Pneumonia suspected")
+                    self.ui.lcdNumberProbability.setStyleSheet("color: #2267ac;")
+                else:
+                    self.ui.labelDiagnosis.setText("Diagnosis: Pneumonia not suspected")
+                    self.ui.lcdNumberProbability.setStyleSheet("color: #222bac;")
+
                 self.ui.lcdNumberProbability.display(probability)
 
                 # Show the LCD
@@ -100,6 +106,7 @@ class PneumologosApp(QMainWindow):
         else:
             self.ui.labelDiagnosis.setText("Please upload an X-ray first.")
             self.ui.lcdNumberProbability.display(0.0)
+            self.ui.lcdNumberProbability.hide()
 
 
 if __name__ == "__main__":
