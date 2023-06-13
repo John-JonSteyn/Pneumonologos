@@ -1,9 +1,9 @@
 import os
 import sys
+import logging
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 from PyQt6.QtGui import QPixmap
-from PIL import Image as PILImage
 from PIL import Image
 from fastai.vision.all import *
 from pneumologos_ui import Ui_MainWindow
@@ -20,8 +20,7 @@ class ImageProcessor:
             pred, _, probs = self.model.predict(img)
             return pred, float(probs[1])
         except Exception as e:
-            # Handle any exceptions that may occur during image processing
-            print(f"An error occurred during image processing: {e}")
+            logging.exception("An error occurred during image processing")
             return None, None
 
 
@@ -109,6 +108,7 @@ class PneumologosApp(QMainWindow):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.ERROR)  # Set logging level to ERROR
     app = QApplication(sys.argv)
     window = PneumologosApp()
     window.show()
