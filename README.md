@@ -178,16 +178,16 @@ Simply follow these steps, as you would the doctors instructions.
 - [x] Design the GUI layout, including necessary elements like buttons, file upload functionality, and display areas for the results.
 - [x] Implement the necessary logic to load the trained model and perform predictions on uploaded X-ray images.
 - [x] Integrate the prediction results and display them in the GUI, including the classification (Pneumonia or Normal) and associated probabilities.
-- [ ] Test the GUI functionality thoroughly and make any necessary refinements.
+- [x] Test the GUI functionality thoroughly and make any necessary refinements.
 
 ### Stage 4: Integration
-- [ ] Integrate the trained model and the GUI by incorporating the model's prediction functionality into the GUI's code.
-- [ ] Handle the image submission from the GUI and pass it to the trained model for classification.
-- [ ] Display the classification result and the probability of pneumonia on the GUI interface.
+- [x] Integrate the trained model and the GUI by incorporating the model's prediction functionality into the GUI's code.
+- [x] Handle the image submission from the GUI and pass it to the trained model for classification.
+- [x] Display the classification result and the probability of pneumonia on the GUI interface.
 
 ### Stage 5: Testing and Refinement
-- [ ] Test the GUI by running it and submitting various X-ray images to ensure proper functionality.
-- [ ] Fine-tune the model and update the trained model if needed to improve performance.
+- [x] Test the GUI by running it and submitting various X-ray images to ensure proper functionality.
+- [x] Fine-tune the model and update the trained model if needed to improve performance.
 
 ### Stage 6: Deplayment
 - [ ] Update requirements.
