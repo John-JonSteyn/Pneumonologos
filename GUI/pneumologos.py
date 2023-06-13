@@ -59,12 +59,10 @@ class PneumologosApp(QMainWindow):
             )
             self.image_path = file_name
 
-            # Reset diagnosis, progress bar, and LCD
+            # Reset diagnosis and LCD
             self.ui.labelDiagnosis.setText("Diagnosis: Not Diagnosed")
-            self.ui.progressBarAnalyse.setValue(0)
             self.ui.lcdNumberProbability.display(0.0)
 
-            # Update progress bar
             total_size = os.path.getsize(file_name)
             chunk_size = 1024 * 1024  # 1 MB
             with open(file_name, "rb") as file:
@@ -73,24 +71,18 @@ class PneumologosApp(QMainWindow):
                     data = file.read(chunk_size)
                     if not data:
                         break
-                    # Process the chunk (e.g., upload to a server)
+                    # Process the chunk
                     uploaded_size += len(data)
-                    progress = int(uploaded_size / total_size * 100)
-                    self.ui.progressBarUpload.setValue(progress)
         else:
             self.ui.labelXRayDisplay.setText("No image selected.")
             self.image_path = ""
 
     def analyse_xray(self):
         if self.image_path:
-            self.ui.progressBarAnalyse.setValue(0)
             self.ui.pushButtonAnalyse.setEnabled(False)  # Disable the button during analysis
 
             # Process the image
             pred, probability = self.image_processor.process_image(self.image_path)
-
-            # Update progress bar
-            self.ui.progressBarAnalyse.setValue(100)
 
             if pred is not None and probability is not None:
                 self.ui.labelDiagnosis.setText(f"Diagnosis: {pred}")
