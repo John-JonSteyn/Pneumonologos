@@ -1,13 +1,12 @@
 import os
 import sys
 import logging
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QFile
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 from PyQt6.QtGui import QPixmap
 from PIL import Image
 from fastai.vision.all import *
 from pneumologos_ui import Ui_MainWindow
-
 
 class ImageProcessor:
     def __init__(self, model_path):
@@ -29,6 +28,10 @@ class PneumologosApp(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        style_file = QFile("style.css")
+        style_file.open(QFile.OpenModeFlag.ReadOnly | QFile.OpenModeFlag.Text)
+        style_sheet = style_file.readAll()
+        QApplication.instance().setStyleSheet(bytes(style_sheet).decode("utf-8"))
         self.ui.pushButtonUpload.clicked.connect(self.upload_xray)
         self.ui.pushButtonAnalyse.clicked.connect(self.analyse_xray)
         self.image_path = ""
