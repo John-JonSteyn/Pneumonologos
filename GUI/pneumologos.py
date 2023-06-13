@@ -37,6 +37,10 @@ class PneumologosApp(QMainWindow):
         self.image_path = ""
         self.image_processor = ImageProcessor("currentModel.pkl")
 
+        # Hide Analyse button and LCD at the start of the program
+        self.ui.pushButtonAnalyse.hide()
+        self.ui.lcdNumberProbability.hide()
+
     def upload_xray(self):
         options = (
             QFileDialog.Option.ReadOnly | QFileDialog.Option.DontUseNativeDialog
@@ -59,20 +63,13 @@ class PneumologosApp(QMainWindow):
             )
             self.image_path = file_name
 
-            # Reset diagnosis and LCD
+            # Reset diagnosis and hide the LCD
             self.ui.labelDiagnosis.setText("Diagnosis: Not Diagnosed")
             self.ui.lcdNumberProbability.display(0.0)
+            self.ui.lcdNumberProbability.hide()
 
-            total_size = os.path.getsize(file_name)
-            chunk_size = 1024 * 1024  # 1 MB
-            with open(file_name, "rb") as file:
-                uploaded_size = 0
-                while True:
-                    data = file.read(chunk_size)
-                    if not data:
-                        break
-                    # Process the chunk
-                    uploaded_size += len(data)
+            # Show the Analyse button
+            self.ui.pushButtonAnalyse.show()
         else:
             self.ui.labelXRayDisplay.setText("No image selected.")
             self.image_path = ""
@@ -87,6 +84,9 @@ class PneumologosApp(QMainWindow):
             if pred is not None and probability is not None:
                 self.ui.labelDiagnosis.setText(f"Diagnosis: {pred}")
                 self.ui.lcdNumberProbability.display(probability)
+
+                # Show the LCD
+                self.ui.lcdNumberProbability.show()
             else:
                 # Show an error message if image processing fails
                 QMessageBox.critical(
