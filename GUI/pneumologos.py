@@ -8,3 +8,15 @@ class PneumologosApp(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+    def upload_xray(self):
+        pass
+
+    def analyse_xray(self):
+        pass
+
+    if __name__ == "__main__":
+        app = QApplication(sys.argv)
+        window = PneumologosApp()
+        window.show()
+        sys.exit(app.exec())
