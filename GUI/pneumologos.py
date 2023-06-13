@@ -1,7 +1,11 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow
-from pneumologos_ui import Ui_MainWindow
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PyQt6.QtGui import QPixmap
+from PIL import Image as PILImage
 from fastai.vision.all import *
+from pneumologos_ui import Ui_MainWindow
+
 
 class PneumologosApp(QMainWindow):
     def __init__(self):
@@ -29,8 +33,8 @@ class PneumologosApp(QMainWindow):
            self.ui.lcdNumberProbability.display(0.0)
 
 
-    if __name__ == "__main__":
-        app = QApplication(sys.argv)
-        window = PneumologosApp()
-        window.show()
-        sys.exit(app.exec())
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = PneumologosApp()
+    window.show()
+    sys.exit(app.exec())
