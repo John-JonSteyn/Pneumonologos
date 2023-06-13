@@ -190,7 +190,7 @@ Simply follow these steps, as you would the doctors instructions.
 - [x] Fine-tune the model and update the trained model if needed to improve performance.
 
 ### Stage 6: Deplayment
-- [ ] Update requirements.
+- [x] Update requirements.
 - [ ] Update Readme.
 
 See the [open issues](https://github.com/John-JonSteyn/Pneumonologos/issues) for a full list of proposed features (and known issues).
