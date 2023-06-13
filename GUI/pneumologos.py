@@ -4,6 +4,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt6.QtGui import QPixmap
 from PIL import Image as PILImage
+from PIL import Image
 from fastai.vision.all import *
 from pneumologos_ui import Ui_MainWindow
 
@@ -14,6 +15,8 @@ class PneumologosApp(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButtonUpload.clicked.connect(self.upload_xray)
+        self.ui.pushButtonAnalyse.clicked.connect(self.analyse_xray)
+        self.image_path = ""
 
     def upload_xray(self):
         options = QFileDialog.Option(QFileDialog.Option.ReadOnly | QFileDialog.Option.DontUseNativeDialog)
@@ -27,8 +30,10 @@ class PneumologosApp(QMainWindow):
             self.ui.labelXRayDisplay.setPixmap(
                 pixmap.scaled(691, 691, Qt.AspectRatioMode.KeepAspectRatio)
             )
+            self.image_path = file_name
         else:
             self.ui.labelXRayDisplay.setText("No image selected.")
+            self.image_path = ""
 
         # Update progress bar
         if file_name:
@@ -46,7 +51,16 @@ class PneumologosApp(QMainWindow):
                     self.ui.progressBarUpload.setValue(progress)
 
     def analyse_xray(self):
-        pass
+        if self.image_path:
+            img = Image.open(self.image_path)
+            img = img.resize((224, 224))  # Resize image to a fixed size
+            learn = load_learner("currentModel.pkl")
+            pred, _, probs = learn.predict(img)
+            self.ui.labelDiagnosis.setText(f"Diagnosis: {pred}")
+            self.ui.lcdNumberProbability.display(float(probs[1]))
+        else:
+            self.ui.labelDiagnosis.setText("Please upload an X-ray first.")
+            self.ui.lcdNumberProbability.display(0.0)
 
 
 if __name__ == "__main__":
