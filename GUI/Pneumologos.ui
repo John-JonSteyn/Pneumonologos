@@ -142,7 +142,7 @@
     <property name="title">
      <string>XRAY</string>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="labelXRayDisplay">
      <property name="geometry">
       <rect>
        <x>10</x>
