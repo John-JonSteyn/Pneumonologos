@@ -31,6 +31,11 @@ class PneumologosApp(QMainWindow):
                 pixmap.scaled(691, 691, Qt.AspectRatioMode.KeepAspectRatio)
             )
             self.image_path = file_name
+            
+            # Reset diagnosis, progress bar, and LCD
+            self.ui.labelDiagnosis.setText("Diagnosis: Not Diagnosed")
+            self.ui.progressBarAnalyse.setValue(0)
+            self.ui.lcdNumberProbability.display(0.0)
         else:
             self.ui.labelXRayDisplay.setText("No image selected.")
             self.image_path = ""
@@ -55,12 +60,22 @@ class PneumologosApp(QMainWindow):
             img = Image.open(self.image_path)
             img = img.resize((224, 224))  # Resize image to a fixed size
             learn = load_learner("currentModel.pkl")
+            
+            # Update progressBarAnalyse
+            self.ui.progressBarAnalyse.setValue(0)
+            
+            # Evaluate the image
             pred, _, probs = learn.predict(img)
+            
+            # Update progress bar to completion
+            self.ui.progressBarAnalyse.setValue(100)
+            
             self.ui.labelDiagnosis.setText(f"Diagnosis: {pred}")
             self.ui.lcdNumberProbability.display(float(probs[1]))
         else:
             self.ui.labelDiagnosis.setText("Please upload an X-ray first.")
             self.ui.lcdNumberProbability.display(0.0)
+
 
 
 if __name__ == "__main__":
