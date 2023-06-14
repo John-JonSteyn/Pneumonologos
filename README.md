@@ -154,15 +154,37 @@ Simply follow these steps, as you would the doctor's instructions.
 
 ## The Basics of Pneumonologos
 
-- Upon launching Pneumonologos, you will see a main window with two panels.
-- The left panel, titled "CONTROLS," contains two buttons:
-  - "Upload" button: Click this button to select and upload an X-ray image file.
-  - "Analyse" button: Once an X-ray image is uploaded, click this button to analyze the X-ray for pneumonia.
-- The right panel, titled "XRAY," initially displays a blank area. Once an X-ray image is uploaded, it will be displayed in this panel.
-- The program provides diagnostic information and probability results in the left panel:
-  - "Diagnosis" label: This label displays the diagnosis result based on the analysis.
-  - "Probability" LCD: This LCD number display shows the probability of the diagnosis ( the likelihood of pneumonia).
-- Disclaimer: The program includes a disclaimer text in the left panel, which emphasizes that Pneumonologos is a proof of concept program and should not replace professional medical advice.
+Upon launching Pneumonologos, you will see a main window with two panels.
+
+<p align="center">
+  <img src="./Assets/Screenshots/screenshotMain.png" alt="Screenshot Main" style="width:50%; height:50%;">
+</p>
+
+The left panel, titled "CONTROLS," contains two buttons:
+- "Upload" button: Click this button to select and upload an X-ray image file.
+
+
+<p align="center">
+  <img src="./Assets/Screenshots/screenshotUpload.png" alt="Screenshot Upload" style="width:50%; height:50%;">
+</p>
+
+- "Analyse" button: Once an X-ray image is uploaded, click this button to analyze the X-ray for pneumonia.
+The right panel, titled "XRAY," initially displays a blank area. Once an X-ray image is uploaded, it will be displayed in this panel.
+The program provides diagnostic information and probability results in the left panel:
+
+<p align="center">
+  <img src="./Assets/Screenshots/screenshotNormal.png" alt="Screenshot Normal" style="width:50%; height:50%;">
+</p>
+
+- "Diagnosis" label: This label displays the diagnosis result based on the analysis.
+
+<p align="center">
+  <img src="./Assets/Screenshots/screenshotPneumonia.png" alt="Screenshot Pneumonia" style="width:50%; height:50%;">
+</p>
+
+- "Probability" LCD: This LCD number display shows the probability of the diagnosis ( the likelihood of pneumonia).
+
+Disclaimer: The program includes a disclaimer text in the left panel, which emphasizes that Pneumonologos is a proof of concept program and should not replace professional medical advice.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
